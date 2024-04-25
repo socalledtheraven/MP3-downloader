@@ -1,11 +1,9 @@
-import os
 import requests
 import re
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 
-from pytube import YouTube
+from pytubefix import YouTube
 #from moviepy.editor import *
-
 
 
 def get_linklist_by_title(searh_request, count=5):
@@ -62,4 +60,3 @@ def get_str_time_from_seconds(seconds):
     else:
         sec = str(seconds % 60)
     return hours + mins + ':' + sec
-
