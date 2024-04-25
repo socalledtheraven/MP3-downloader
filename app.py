@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, Response, url_for, send_file,
 import functions
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '2c7f07064e05560b9745cfef4fda2b7307aaf3f7'
+app.config['SECRET_KEY'] = '2c7f07064e05560b9745cfef4fda2b7307aaf3f7' # fix this, but its the original owner's so no real rush
 
 max_results_count = 5
 # videos vost for current client
@@ -59,7 +59,7 @@ def download():
 
         try:
             stream, session['current_title'] = functions.get_stream(session['videos'][video_number-1])
-            stream.download(filename='temp-download.txt', timeout=80)
+            stream.download(filename='temp-download.txt')
         except:
             flash('Downloading error.')
             session['videos'][video_number-1]['description'] = session['videos'][video_number-1]['description'] + ' | unavailable to download'
